@@ -1,3 +1,26 @@
 .categories {
   margin-top: 2rem;
+  .categoriesCard {
+    box-shadow: none;
+    max-width: 18rem;
+    .imgCategory {
+      &:hover {
+        cursor: pointer;
+        animation: shadow-drop-bottom-right 0.2s linear both;
+        @keyframes shadow-drop-bottom-right {
+          0% {
+            box-shadow: 0 0 0 0 transparent;
+          }
+          100% {
+            box-shadow: 40px 30px 50px -40px rgba(43, 43, 43, 0.55);
+          }
+        }
+      }
+    }
+  }
+  .listCategories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
 }

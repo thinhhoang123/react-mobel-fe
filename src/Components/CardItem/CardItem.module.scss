@@ -59,36 +59,31 @@
 
   .cardItemFooter {
     padding-top: 0;
-    .cartItemFooterContain {
-      align-items: center;
-      width: 50%;
+    align-items: center;
 
-      &:hover .cartIcon {
-        display: inline;
-        margin-right: 0.2em;
-        transition: 1s ease;
-      }
-
-      &:hover .addToCartBtn {
-        animation: slide-right 0.4s linear both;
+    .addToCartBtn {
+      &:hover {
+        &::before {
+          content: '→';
+        }
+        animation: slide-right 0.2s linear both;
         @keyframes slide-right {
           0% {
             transform: translateX(0);
+          }
+          50% {
+            transform: translateX(0.1rem);
           }
           100% {
             transform: translateX(0.2rem);
           }
         }
       }
+    }
 
-      .cartIcon {
-        display: none;
-      }
-
-      .addToCartBtn {
-        display: inline-block;
-        cursor: pointer;
-      }
+    .addToCartBtn {
+      display: inline-block;
+      cursor: pointer;
     }
   }
 }

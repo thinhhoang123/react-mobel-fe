@@ -38,11 +38,8 @@ const CardItem: FC = () => (
       </CardBody>
 
       <CardFooter className={styles.cardItemFooter}>
-        <div className={styles.cartItemFooterContain}>
-          <FontAwesomeIcon icon={faArrowRight} className={styles.cartIcon} />
-          <div className={styles.addToCartBtn}>
-            <Text as="b">ADD TO CART</Text>
-          </div>
+        <div className={styles.addToCartBtn}>
+          <Text as="b">ADD TO CART</Text>
         </div>
       </CardFooter>
     </Card>

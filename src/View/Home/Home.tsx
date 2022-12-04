@@ -12,6 +12,7 @@ const Home: FC = () => {
       <div className={styles.categories}>
         <Categories />
       </div>
+      <Divider />
     </>
   );
 };

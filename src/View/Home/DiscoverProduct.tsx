@@ -11,8 +11,8 @@ const DiscoverProduct: FC = () => {
         DISCOVER PRODUCTS
       </Text>
       <ListCardItem>
-        {[1, 2, 3, 1].map((e) => {
-          return <CardItem />;
+        {[1, 2, 3, 4, 5, 6, 7, 8].map((e) => {
+          return <CardItem key={e} />;
         })}
       </ListCardItem>
     </>

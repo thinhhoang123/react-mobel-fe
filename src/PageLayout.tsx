@@ -6,11 +6,9 @@ const PageLayout: FC<any> = ({ children }) => {
   return (
     <Stack>
       <SiteHeader />
-      <body>
-        <Container maxW="100vw" marginTop="8em">
-          {children}
-        </Container>
-      </body>
+      <Container maxW="100vw" style={{ marginTop: '8rem' }}>
+        {children}
+      </Container>
       <h1>This.is footer</h1>
     </Stack>
   );
