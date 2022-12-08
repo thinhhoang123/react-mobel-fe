@@ -3,7 +3,7 @@ import CardItem from '../../Components/CardItem/CardItem';
 import { Text, Divider } from '@chakra-ui/react';
 
 import ListCardItem from '../../Components/ListCardItems/ListCardItems';
-const DiscoverProduct: FC = () => {
+const DiscoverProduct: FC<any> = ({ products }) => {
   return (
     <>
       <Text>FEATURED</Text>
@@ -11,8 +11,15 @@ const DiscoverProduct: FC = () => {
         DISCOVER PRODUCTS
       </Text>
       <ListCardItem>
-        {[1, 2, 3, 4, 5, 6, 7, 8].map((e) => {
-          return <CardItem key={e} />;
+        {products.map((product: any) => {
+          return (
+            <CardItem
+              key={product._id}
+              price={product.price}
+              imgURL={product.imgURL}
+              description={product.description}
+            />
+          );
         })}
       </ListCardItem>
     </>

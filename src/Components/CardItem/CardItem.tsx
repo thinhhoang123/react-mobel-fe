@@ -12,14 +12,14 @@ import styles from './CardItem.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
-const CardItem: FC = () => (
+const CardItem: FC<any> = ({ imgURL, price, description }) => (
   <>
     <Card maxW="md" className={styles.cartItem}>
       <CardBody>
         <div className={styles.imgContain}>
           <Image
-            src="https://eskil.qodeinteractive.com/wp-content/uploads/2022/03/shop-1-img-1.jpg"
-            alt=""
+            src={imgURL}
+            alt={description}
             borderRadius="lg"
             className={styles.imgProduct}
           />
@@ -32,8 +32,8 @@ const CardItem: FC = () => (
         </div>
 
         <Flex mt="6" justifyContent="space-between">
-          <Text>Poliframe tuffed accnet chair 29.1″W, jet black</Text>
-          <Text>450$</Text>
+          <Text>{description}</Text>
+          <Text>{price}$</Text>
         </Flex>
       </CardBody>
 
