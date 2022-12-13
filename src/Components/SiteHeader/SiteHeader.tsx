@@ -15,6 +15,7 @@ const SiteHeader: FC = () => {
             alt="Foot Air logo"
             className={styles.footAirLogo}
           />
+          <div></div>
           <div className={styles.mobileIconBtn}>
             <SideHeaderSearchDrawer />
             <SideHeaderMenuDrawer />
