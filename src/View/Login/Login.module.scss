@@ -1,0 +1,52 @@
+.login {
+  background-image: url('https://eskil.qodeinteractive.com/wp-content/uploads/2022/03/rev-img-2.jpg');
+  background-position: right bottom, left top;
+  background-repeat: no-repeat, repeat;
+  background-size: cover;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .loginCard {
+    box-shadow: var(--chakra-shadows-sm);
+    backdrop-filter: saturate(180%) blur(5px);
+    background-color: rgba(255, 255, 255, 0.2);
+    &:hover {
+      animation: imgProduct 0.4s linear both;
+      @keyframes imgProduct {
+        0% {
+          box-shadow: 0 0 0 0 transparent;
+        }
+        100% {
+          box-shadow: 0 0 30px 0 rgb(216, 216, 216);
+        }
+      }
+    }
+  }
+  .headerText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .accountInput,
+  .inputPassword {
+    input {
+      background-color: white;
+    }
+  }
+  .inputPassword {
+    margin-top: 1em;
+  }
+  .showPasswordBtn {
+    height: 100%;
+  }
+
+  .loginBtn {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 1em;
+    button {
+      width: 100%;
+    }
+  }
+}

@@ -6,14 +6,15 @@ import AppRouter from './AppRouter/AppRouter';
 import PageLayout from './PageLayout';
 import { ChakraProvider } from '@chakra-ui/react';
 import theme from './theme';
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <ChakraProvider theme={theme}>
-      <PageLayout>
-        <RouterProvider router={AppRouter} />
-      </PageLayout>
-    </ChakraProvider>
+    <BrowserRouter>
+      <ChakraProvider theme={theme}>
+        <PageLayout></PageLayout>
+      </ChakraProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

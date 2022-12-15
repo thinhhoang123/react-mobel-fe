@@ -12,15 +12,8 @@ const DiscoverProduct: FC<any> = ({ products }) => {
         DISCOVER PRODUCTS
       </Text>
       <ListCardItem>
-        {products.map((product: any) => {
-          return (
-            <CardItem
-              key={product._id}
-              price={product.price}
-              imgURL={product.imgURL}
-              description={product.description}
-            />
-          );
+        {products.map((product: IProduct) => {
+          return <CardItem key={product._id} {...product} />;
         })}
       </ListCardItem>
 
@@ -57,3 +50,11 @@ const DiscoverProduct: FC<any> = ({ products }) => {
 };
 
 export default DiscoverProduct;
+
+interface IProduct {
+  _id: string;
+  price: number;
+  imgURL: string;
+  description: string;
+}
+

@@ -12,6 +12,7 @@ const Home: FC = () => {
   }, []);
 
   const [discoverProduct, setDiscoverProduct] = useState<any>([]);
+  
   const getDiscoverProduct = async () => {
     const response: Response = await HomeService.getFiveProduct();
     setDiscoverProduct(await response.json());
