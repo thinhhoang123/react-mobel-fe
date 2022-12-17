@@ -25,9 +25,9 @@ const CardItem: FC<any> = ({ imgURL, price, description }) => (
           />
           <div className={styles.imgInfo}>
             <div className={[styles.infoBtn, styles.infoQuickView].join(' ')}>
-              button1
+              Quick view
             </div>
-            <div className={styles.infoBtn}>button2</div>
+            <div className={styles.infoBtn}>Add wishlist</div>
           </div>
         </div>
 
@@ -47,3 +47,4 @@ const CardItem: FC<any> = ({ imgURL, price, description }) => (
 );
 
 export default CardItem;
+

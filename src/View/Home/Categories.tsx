@@ -67,7 +67,7 @@ const CategoriesCard: FC<ICategoriesCardProps> = ({ imgSrc, text }) => {
           borderRadius="lg"
           className={styles.imgCategory}
         />
-        <Text>{text}</Text>
+        <Text mt="2">{text}</Text>
       </CardBody>
     </Card>
   );
@@ -79,3 +79,4 @@ interface ICategoriesCardProps {
 }
 
 export default Categories;
+
