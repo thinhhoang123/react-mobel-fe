@@ -5,29 +5,39 @@ import {
   CardFooter,
   CardHeader,
   FormControl,
-  FormHelperText,
+  FormErrorMessage,
   FormLabel,
-  Img,
   Input,
   InputGroup,
   InputRightElement,
   Text,
 } from '@chakra-ui/react';
 import React, { useRef, useState } from 'react';
+import { useForm } from 'react-hook-form';
 import styles from './Login.module.scss';
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { ErrorMessage } from '@hookform/error-message';
+
+const schema = yup
+  .object({
+    account: yup.string().required(),
+    password: yup.string().required(),
+  })
+  .required();
 
 const Login = () => {
   const [show, setShow] = useState(false);
-  const accountRef = useRef();
-  const passwordRef = useRef();
-
   const handleClick = () => [setShow(!show)];
 
-  const handleSubmit = () => {
-    const data = {
-      account: (accountRef.current as any).value,
-      password: (passwordRef.current as any).value,
-    };
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+  const onSubmit = (data: any) => {
     console.log(data);
   };
 
@@ -35,24 +45,26 @@ const Login = () => {
     <div>
       <div className={styles.login}>
         <Card className={styles.loginCard}>
-          <CardHeader className={styles.headerText}>
-            <Text fontSize="4xl" as="b">
-              LOGIN
-            </Text>
-          </CardHeader>
-          <CardBody>
-            <FormControl>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <CardHeader className={styles.headerText}>
+              <Text fontSize="4xl" as="b">
+                LOGIN
+              </Text>
+            </CardHeader>
+            <CardBody>
               <div className={styles.accountInput}>
                 <FormLabel>
                   <Text as="b">Account</Text>
                 </FormLabel>
                 <Input
-                  type="email"
+                  type="text"
                   size="lg"
                   placeholder="Enter account"
+                  id="inputAccount"
                   as="input"
-                  ref={accountRef}
+                  {...register('account')}
                 />
+                <ErrorMessage errors={errors} name="account" as="p" />
               </div>
 
               <div className={styles.inputPassword}>
@@ -65,8 +77,9 @@ const Login = () => {
                     type={show ? 'text' : 'password'}
                     placeholder="Enter password"
                     size="lg"
+                    id="inputPassword"
                     as="input"
-                    ref={passwordRef}
+                    {...register('password')}
                   />
                   <InputRightElement
                     width="4.5rem"
@@ -77,15 +90,16 @@ const Login = () => {
                     </Button>
                   </InputRightElement>
                 </InputGroup>
+                <ErrorMessage errors={errors} name="password" as="p" />
               </div>
-            </FormControl>
 
-            <CardFooter className={styles.loginBtn}>
-              <Button colorScheme="teal" variant="solid" onClick={handleSubmit}>
-                Login
-              </Button>
-            </CardFooter>
-          </CardBody>
+              <CardFooter className={styles.loginBtn}>
+                <Button colorScheme="teal" variant="solid" type="submit">
+                  Login
+                </Button>
+              </CardFooter>
+            </CardBody>
+          </form>
         </Card>
       </div>
     </div>

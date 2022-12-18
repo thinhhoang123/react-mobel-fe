@@ -6,12 +6,20 @@ import SideHeaderMenuDrawer from './SideHeaderMenuDrawer';
 import SideHeaderSearchDrawer from './SiteHeaderSearchDrawer';
 
 import { Link as RouterLink } from 'react-router-dom';
+import { Router } from '../../AppRouter/AppRouter';
+
+const widgetHolder: IWidgetHolder[] = [
+  { holder: 'Search', to: Router.Home() },
+  { holder: 'Account', to: Router.LoginPage() },
+  { holder: 'Wish list', to: Router.Home() },
+];
+
 const SiteHeader: FC = () => {
   return (
     <header className={styles.siteHeader}>
       <Container maxW="8xl">
         <HStack spacing="24px" className={styles.siteHeaderContain}>
-          <Link as={RouterLink} to="/">
+          <Link as={RouterLink} to={Router.Home()}>
             <Image
               src={FootAir}
               alt="Foot Air logo"
@@ -19,15 +27,13 @@ const SiteHeader: FC = () => {
             />
           </Link>
           <div className={styles.desktopIconBth}>
-            <Link as={RouterLink} to="">
-              Search
-            </Link>
-            <Link as={RouterLink} to="login">
-              Account
-            </Link>
-            <Link as={RouterLink} to="">
-              Wish list
-            </Link>
+            {widgetHolder.map((widget: IWidgetHolder) => {
+              return (
+                <Link as={RouterLink} to={widget.to}>
+                  {widget.holder}
+                </Link>
+              );
+            })}
           </div>
           <div className={styles.mobileIconBtn}>
             <SideHeaderSearchDrawer />
@@ -38,6 +44,11 @@ const SiteHeader: FC = () => {
     </header>
   );
 };
+
+interface IWidgetHolder {
+  holder: string;
+  to: string;
+}
 
 export default SiteHeader;
 

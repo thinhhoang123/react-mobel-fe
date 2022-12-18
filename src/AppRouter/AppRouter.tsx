@@ -1,10 +1,4 @@
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  useRoutes,
-} from 'react-router-dom';
-import Contact from '../Contact';
+import { useRoutes } from 'react-router-dom';
 import Home from '../View/Home/Home';
 import Login from '../View/Login/Login';
 
@@ -21,6 +15,7 @@ export const Router = {
   ],
 
   Home: () => '/',
+  LoginPage: () => 'login',
 };
 
 const AppRouter = () => {

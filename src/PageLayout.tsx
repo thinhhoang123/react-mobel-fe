@@ -3,6 +3,7 @@ import { FC } from 'react';
 import AppRouter from './AppRouter/AppRouter';
 import SiteHeader from './Components/SiteHeader/SiteHeader';
 import { RouterProvider } from 'react-router-dom';
+import Footer from './Components/Footer/Footer';
 
 const PageLayout: FC<any> = ({ children }) => {
   return (
@@ -12,7 +13,7 @@ const PageLayout: FC<any> = ({ children }) => {
         {/* <RouterProvider router={AppRouter} /> */}
         <AppRouter />
       </Container>
-      <h1>This.is footer</h1>
+      <Footer />
     </Stack>
   );
 };
