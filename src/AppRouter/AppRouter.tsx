@@ -1,6 +1,7 @@
 import { useRoutes } from 'react-router-dom';
 import Home from '../View/Home/Home';
 import Login from '../View/Login/Login';
+import WishList from '../View/WishList/WishList';
 
 export const Router = {
   appRouter: [
@@ -12,10 +13,15 @@ export const Router = {
       path: '/login',
       element: <Login />,
     },
+    {
+      path: '/wishList',
+      element: <WishList />,
+    },
   ],
 
   Home: () => '/',
   LoginPage: () => 'login',
+  WishList: () => 'wishList'
 };
 
 const AppRouter = () => {

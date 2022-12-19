@@ -6,13 +6,22 @@ import {
   CardFooter,
   HStack,
   Flex,
+  Link,
 } from '@chakra-ui/react';
 import { FC } from 'react';
 import styles from './CardItem.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { useAppDispatch } from '../../hook';
+import { addWishList } from '../../Features/wishListSlice';
 
-const CardItem: FC<any> = ({ imgURL, price, description }) => (
+
+const CardItem: FC<any> = ({ imgURL, price, description }) => {
+  const dispart = useAppDispatch();
+  const handleAddWishList = () => {
+    dispart(addWishList())
+  }
+  return(
   <>
     <Card maxW="md" className={styles.cartItem}>
       <CardBody>
@@ -27,7 +36,9 @@ const CardItem: FC<any> = ({ imgURL, price, description }) => (
             <div className={[styles.infoBtn, styles.infoQuickView].join(' ')}>
               Quick view
             </div>
-            <div className={styles.infoBtn}>Add wishlist</div>
+            <div className={styles.infoBtn} onClick={handleAddWishList}>
+              <Link> Add wishlist </Link>
+              </div>
           </div>
         </div>
 
@@ -44,7 +55,7 @@ const CardItem: FC<any> = ({ imgURL, price, description }) => (
       </CardFooter>
     </Card>
   </>
-);
+)};
 
 export default CardItem;
 

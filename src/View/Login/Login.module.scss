@@ -3,10 +3,12 @@
   background-position: right bottom, left top;
   background-repeat: no-repeat, repeat;
   background-size: cover;
-  height: 50vh;
+  border-radius: var(--chakra-radii-md);
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 2em;
   .loginCard {
     width: 30rem;
     box-shadow: var(--chakra-shadows-sm);

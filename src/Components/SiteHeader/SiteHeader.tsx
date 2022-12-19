@@ -11,7 +11,7 @@ import { Router } from '../../AppRouter/AppRouter';
 const widgetHolder: IWidgetHolder[] = [
   { holder: 'Search', to: Router.Home() },
   { holder: 'Account', to: Router.LoginPage() },
-  { holder: 'Wish list', to: Router.Home() },
+  { holder: 'Wish list', to: Router.WishList() },
 ];
 
 const SiteHeader: FC = () => {

@@ -85,7 +85,7 @@ const Login = () => {
                     width="4.5rem"
                     className={styles.showPasswordBtn}
                   >
-                    <Button h="1.5rem" size="sm" onClick={handleClick}>
+                    <Button h="1.5rem" size="sm" colorScheme='teal' variant='outline' onClick={handleClick}>
                       {show ? 'Hide' : 'Show'}
                     </Button>
                   </InputRightElement>
