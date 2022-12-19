@@ -1,12 +1,13 @@
+@import '../../Styles/mixins';
+
 .siteHeader {
+  @include glassmorphism();
   position: fixed;
   top: 0px;
   width: var(--chakra-sizes-full);
   min-height: 60px;
-  box-shadow: var(--chakra-shadows-sm);
   z-index: 999;
-  backdrop-filter: saturate(180%) blur(5px);
-  background-color: rgba(255, 255, 255, 0.8);
+
   .siteHeaderContain {
     display: flex;
     justify-content: space-between;

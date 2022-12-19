@@ -1,0 +1,5 @@
+@mixin glassmorphism() {
+  box-shadow: var(--chakra-shadows-sm);
+  backdrop-filter: saturate(180%) blur(5px);
+  background-color: rgba(255, 255, 255, 0.8);
+}

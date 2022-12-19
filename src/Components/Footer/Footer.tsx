@@ -11,7 +11,7 @@ import {
   Image,
 } from '@chakra-ui/react';
 import { ReactNode } from 'react';
-import mobel from '../../../public/mobel.svg';
+import mobel from '../../Assets/img/mobel.svg';
 
 const ListHeader = ({ children }: { children: ReactNode }) => {
   return (

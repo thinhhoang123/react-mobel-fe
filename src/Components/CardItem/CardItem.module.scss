@@ -1,3 +1,5 @@
+@import '../../Styles/mixins';
+
 .cartItem {
   box-shadow: none !important;
 
@@ -7,16 +9,9 @@
     width: 100%;
 
     &:hover {
-      animation: imgProduct 0.4s linear both;
-      @keyframes imgProduct {
-        0% {
-          box-shadow: 0 0 0 0 transparent;
-        }
-        100% {
-          box-shadow: 0 0 30px 0 rgb(216, 216, 216);
-        }
-      }
+      @include backdropHover();
     }
+
     &:hover .imgInfo {
       height: 15%;
     }
@@ -87,3 +82,4 @@
     }
   }
 }
+
