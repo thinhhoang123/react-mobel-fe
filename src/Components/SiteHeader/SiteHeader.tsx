@@ -9,9 +9,9 @@ import { Link as RouterLink } from 'react-router-dom';
 import { Router } from '../../AppRouter/AppRouter';
 
 const widgetHolder: IWidgetHolder[] = [
-  { holder: 'Search', to: Router.Home() },
-  { holder: 'Account', to: Router.LoginPage() },
-  { holder: 'Wish list', to: Router.WishList() },
+  { id: 1, holder: 'Search', to: Router.Home() },
+  { id: 2, holder: 'Account', to: Router.LoginPage() },
+  { id: 3, holder: 'Wish list', to: Router.WishList() },
 ];
 
 const SiteHeader: FC = () => {
@@ -29,7 +29,7 @@ const SiteHeader: FC = () => {
           <div className={styles.desktopIconBth}>
             {widgetHolder.map((widget: IWidgetHolder) => {
               return (
-                <Link as={RouterLink} to={widget.to}>
+                <Link as={RouterLink} to={widget.to} key={widget.id}>
                   {widget.holder}
                 </Link>
               );
@@ -46,6 +46,7 @@ const SiteHeader: FC = () => {
 };
 
 interface IWidgetHolder {
+  id: number;
   holder: string;
   to: string;
 }
