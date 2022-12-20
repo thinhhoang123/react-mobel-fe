@@ -17,13 +17,22 @@
     }
     .desktopIconBth {
       display: flex;
+      align-items: center;
       gap: 1em;
+      .inputSearch{
+        input{
+          border-radius: 20px;
+        }
+      }
     }
     .footAirLogo {
       width: 8rem;
       height: 5rem;
     }
   }
+}
+.mobelLogoMobile{
+  width: 100px;
 }
 @media all and (min-width: 600px) {
   .siteHeaderContain {

@@ -11,6 +11,7 @@ import {
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FC } from 'react';
+import { SearchInput } from './SiteHeader';
 
 const SideHeaderSearchDrawer: FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -22,7 +23,10 @@ const SideHeaderSearchDrawer: FC = () => {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>Menu</DrawerHeader>
+          <DrawerHeader>Searching 👌</DrawerHeader>
+          <DrawerBody>
+            <SearchInput/>
+          </DrawerBody>
         </DrawerContent>
       </Drawer>
     </>

@@ -1,0 +1,43 @@
+@import '../../Styles/mixins';
+
+.wishList{
+    .cardItem{
+        height: 100%;
+        justify-self: stretch;
+        .itemCard{
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        }
+        @include glassmorphism();
+        &:hover {
+            @include backdropHover();
+            .itemCard{
+                @include backdropHover();
+            }
+        }
+    }
+    .listWishLish{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+        gap: 0.5em;
+    }
+
+    .wishListAction{
+        display: flex;
+        gap: 0.2em;
+    }
+    .WishListHeartHead{
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 0.5rem;
+        .wishListHeart{
+            color: var(--chakra-colors-red-500);
+            cursor: pointer;
+        }
+        .wishListCart{
+            color: var(--chakra-colors-teal-500);
+            cursor: pointer;
+        }
+
+    }
+}
