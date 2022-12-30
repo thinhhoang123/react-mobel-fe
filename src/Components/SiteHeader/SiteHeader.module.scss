@@ -11,6 +11,11 @@
   .siteHeaderContain {
     display: flex;
     justify-content: space-between;
+    .logoBtn{
+      display: flex;
+      gap: 1em;
+     align-items: center;
+    }
     .mobileIconBtn {
       display: flex;
       gap: 1em;
@@ -43,7 +48,7 @@
 }
 @media all and (max-width: 600px) {
   .siteHeaderContain {
-    .desktopIconBth {
+    .desktopIconBth, .logoAction{
       display: none !important;
     }
   }

@@ -33,7 +33,7 @@ export default function Footer() {
               <Link href={'#'}>Features</Link>
               <Tag
                 size={'sm'}
-                bg={useColorModeValue('green.300', 'green.800')}
+                bg={useColorModeValue('teal.300', 'teal.800')}
                 ml={2}
                 color={'white'}
               >
