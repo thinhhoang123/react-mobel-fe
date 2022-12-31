@@ -7,7 +7,7 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
-  Link
+  Link,
 } from '@chakra-ui/react';
 import styles from './SiteHeader.module.scss';
 import SideHeaderMenuDrawer from './SideHeaderMenuDrawer';
@@ -31,21 +31,24 @@ const SiteHeader: FC = () => {
       <Container maxW="8xl">
         <HStack spacing="24px" className={styles.siteHeaderContain}>
           <div className={styles.logoBtn}>
-          <Link as={RouterLink} to={Router.Home()}>
-            <Image
-              src={mobel}
-              alt="Mobel logo"
-              className={styles.footAirLogo}
+            <Link as={RouterLink} to={Router.Home()}>
+              <Image
+                src={mobel}
+                alt="Mobel logo"
+                className={styles.footAirLogo}
               />
-          </Link>
-          <div className={styles.logoAction}>
-            <MenuComponent menuBtn='Categories' menuList={[...categoriesList]}/>
-          </div>
+            </Link>
+            <div className={styles.logoAction}>
+              <MenuComponent
+                menuBtn="Categories"
+                menuList={[...categoriesList]}
+              />
+            </div>
           </div>
           <div className={styles.desktopIconBth}>
-            <SearchInput/>
-            <WidgetHolder widgetHolder={widgetHolder}/>
-          <UserHeader/>
+            <SearchInput />
+            <WidgetHolder widgetHolder={widgetHolder} />
+            <UserHeader />
           </div>
           <div className={styles.mobileIconBtn}>
             <SideHeaderSearchDrawer />
@@ -61,15 +64,19 @@ export const SearchInput: FC = () => (
   <div>
     <InputGroup className={styles.inputSearch}>
       <InputLeftElement
-        pointerEvents='none'
+        pointerEvents="none"
         children={<FontAwesomeIcon icon={faSearch} />}
       />
-      <Input type='tel' placeholder='Searching 👀 ...' focusBorderColor='teal.400'/>
+      <Input
+        type="tel"
+        placeholder="Searching 👀 ..."
+        focusBorderColor="teal.400"
+      />
     </InputGroup>
   </div>
-)
+);
 
-const WidgetHolder: FC<IWidgetItemProps> = ({widgetHolder}) => {
+const WidgetHolder: FC<IWidgetItemProps> = ({ widgetHolder }) => {
   return (
     <>
       {widgetHolder.map((widget: IWidgetHolder) => {
@@ -80,8 +87,8 @@ const WidgetHolder: FC<IWidgetItemProps> = ({widgetHolder}) => {
         );
       })}
     </>
-  )
-}
+  );
+};
 
 interface IWidgetItemProps {
   widgetHolder: IWidgetHolder[];
@@ -94,12 +101,11 @@ export interface IWidgetHolder {
 }
 
 const categoriesList = [
-  {itemText: 'Chairs', path: "/"},
-  {itemText: 'Sofas', path: "/"},
-  {itemText: 'Pedants', path: "/"},
-  {itemText: 'Home decor', path: "/"},
-  {itemText: 'Coffee table', path: "/"},
-  {itemText: 'Lamps', path: "/"}
-]
+  { itemText: 'Chairs', path: '/shopping' },
+  { itemText: 'Sofas', path: '/shopping' },
+  { itemText: 'Pedants', path: '/shopping' },
+  { itemText: 'Home decor', path: '/shopping' },
+  { itemText: 'Coffee table', path: '/shopping' },
+  { itemText: 'Lamps', path: '/shopping' },
+];
 export default SiteHeader;
-

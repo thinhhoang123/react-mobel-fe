@@ -6,7 +6,7 @@ import DiscoverProduct from './DiscoverProduct';
 import styles from './Home.module.scss';
 import * as HomeService from '../../Services/Home';
 
-const mockDiscover = [
+export const mockDiscover = [
   {
     _id: '6390cc11ae8e149285fae04e',
     title: '',
@@ -123,4 +123,3 @@ const Home: FC = () => {
 };
 
 export default Home;
-
